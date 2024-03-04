@@ -110,6 +110,28 @@ const srRight = ScrollReveal({
 srRight.reveal('.skills-box',{delay: 100})
 srRight.reveal('.form-control',{delay: 100})
 
+/* -- Contact Us-- */
+function sendMail() {
+    var params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+    };
+
+    const serviceID = "service_ax4h3gy"; 
+    const templateID = "template_uio2pm6"; 
+
+    emailjs.send(serviceID, templateID, params)
+        .then(res => {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+            console.log(res);
+            alert("Your message sent successfully!!");
+        })
+        .catch(err => console.log(err));
+}
+
 
 
 /* ----- CHANGE ACTIVE LINK ----- */
