@@ -49,6 +49,28 @@ function myMenuFunction(){
         reset: true     
  })
 
+ /*  CV Downloader */
+ document.getElementById('downloadBtn').addEventListener('click', function() {
+    // Replace 'path_to_your_cv_file' with the actual path to your CV file
+    var cvUrl = 'assets/cv/CV-Samuel_Niyomuhoza.pdf';
+    
+    // Create a temporary anchor element
+    var link = document.createElement('a');
+    link.href = cvUrl;
+    link.download = 'niyomuhoza_samuel_cv.pdf'; // Set the name for the downloaded file
+    link.target = '_blank';
+    
+    // Append the anchor element to the document body
+    document.body.appendChild(link);
+    
+    // Trigger a click event on the anchor element
+    link.click();
+    
+    // Remove the anchor element from the document body
+    document.body.removeChild(link);
+});
+
+
 /* -- HOME -- */
 sr.reveal('.featured-text-card',{})
 sr.reveal('.featured-name',{delay: 100})
